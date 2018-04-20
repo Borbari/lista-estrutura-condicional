@@ -13,7 +13,6 @@ public class ExemploJOptionPane{
       JOptionPane.showMessageDialog(null,"M�dia Litros: " + mediaLitros); 
                
       
-      double mediaLitros = n1*n2*365;        
-      double mediaLitros = n1*n2*365;
+      
   }
 }

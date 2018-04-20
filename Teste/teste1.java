@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
             },
             "Edição"
             );
-            if(opcao == 1){
+            if(opcao == 0){
                 JOptionPane.showMessageDialog(null,
                 "Edição seliconada");
-            }else if(opcao ==0){
+            }else if(opcao ==1){
                 JOptionPane.showMessageDialog(null,
                 "Cadastro selecionado");
             }else if(opcao ==2 ){

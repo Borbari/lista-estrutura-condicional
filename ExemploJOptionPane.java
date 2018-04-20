@@ -10,11 +10,10 @@ public class ExemploJOptionPane{
       Double n3 = Double.parseDouble(JOptionPane.showInputDialog("Valor litros?"));
 
       double mediaLitros = n1*n2*365;
-      JOptionPane.showMessageDialog(null,"Média Litros: " + mediaLitros); 
+      JOptionPane.showMessageDialog(null,"Mï¿½dia Litros: " + mediaLitros); 
                
       
-                 
-
-
+      double mediaLitros = n1*n2*365;        
+      double mediaLitros = n1*n2*365;
   }
 }

@@ -1,0 +1,10 @@
+// converter de String para int
+int numero = Integer.parseInt("2");
+
+// converter de String para double
+double valor = Double.parseDouble("2.30");
+
+char letra = "Pequeno".charAT(0); // recebe P
+
+boolean vivo = Boolean.parseBoolean("true");
+vivo = Boolean.parseBoolean("yes");

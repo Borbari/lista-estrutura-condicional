@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 public class While03{
     public static void main(String[] args){
         //solitando 3 nomes
-        int quantidadeMaxima = 3;
+        int quantidadeMaxima = 2;
                         //variavel maiorIdade           //variavel menor idade
         int atual = 0, maiorIdade = Integer.MIN_VALUE, menorIdade = Integer.MAX_VALUE;
 

@@ -17,11 +17,11 @@ public class AtividadeArrayList5 {
         String buscar = JOptionPane.showInputDialog("Buscar nome gravado");
         for (int i = 0; i < nomes.size(); i++) {
             if (buscar.equals(nomes.get(i))) {
-                JOptionPane.showMessageDialog(null, "Nome " + buscar + " não existente!","Resposta",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Nome " + buscar + " Nome existente!","Resposta",JOptionPane.INFORMATION_MESSAGE);
             break;
             }
             if(i == nomes.size()-1){
-                JOptionPane.showMessageDialog(null, "Nome " + buscar + " não existe!","Resposta",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Nome " + buscar + " Não existe!","Resposta",JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }

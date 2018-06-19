@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
  *
  * @author Alunos
  */
-public class AtividadeArrayList7 {
+public class ExemploIgnoreEquals {
 
     
     public static void main(String[]args){
@@ -129,12 +129,4 @@ public class AtividadeArrayList7 {
         );
     }
 
-}       
-            
-            
-            
- 
-        
-        
-    
-
+} 

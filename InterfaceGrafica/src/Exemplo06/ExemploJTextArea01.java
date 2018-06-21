@@ -32,14 +32,6 @@ private void gerarTela(){
         jFrame.setLocationRelativeTo(null);
 
 }
-private void gerarDimensoes(){
-    jLabelDescricao.setSize(70, 20);
-    jScrollPane.setSize(450, 410);
-}
-private void gerarLocalizacoes(){
-    jLabelDescricao.setLocation(10, 10);
-    jScrollPane.setLocation(10, 35);
-}
 private void adicionarComponentes(){
     jFrame.add(jLabelDescricao);
     jFrame.add(jScrollPane);
@@ -50,10 +42,18 @@ private void instanciarComponentes(){
     jLabelDescricao = new JLabel("Descrição");
     jScrollPane.setViewportView(jTextArea);
 }
+private void gerarDimensoes(){
+    jLabelDescricao.setSize(70, 20);
+    jScrollPane.setSize(450, 410);
+}
+private void gerarLocalizacoes(){
+    jLabelDescricao.setLocation(10, 10);
+    jScrollPane.setLocation(10, 35);
+}
 private void configurarJScrollpane(){
     jScrollPane.setViewportView(jTextArea);
     jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
     jTextArea.setLineWrap(true);
 }
 }

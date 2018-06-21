@@ -1,6 +1,7 @@
 
 package Exercicio00;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
@@ -11,6 +12,8 @@ import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -20,10 +23,14 @@ import javax.swing.JTextField;
 public class Exercicio00JButtonTela implements Exercicio00Interface {
     private JFrame jFrame;
     private JCheckBox jCheckBoxAdestrado, jCheckBoxVacinado, jCheckBoxCastrado, jCheckBoxPedigree;
-    private JButton jButtonCancelar, jButtonSalvar, botao;
-    private JLabel  labelNome, labelIdade, labelApelido, labelPreco;
+    private JButton jButtonCancelar, jButtonSalvar, botao; 
+    private JLabel  labelNome, labelIdade, labelApelido, labelPreco, labelRaca, jLabelDescricao;
     private JTextField campoNome, campoIdade, campoApelido, campoPreco;
     private JComboBox caixaDeSelecao;
+    private JRadioButton jRadioButtonCome, jRadioButtonVivo, jRadioButtonMorto,jRadioButtonRacao;
+    private JScrollPane jScrollPane;
+    private JTextArea jTextArea;       
+            
             
     public Exercicio00JButtonTela(){
         gerarTela();
@@ -34,7 +41,7 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
         acaoBotaoLimpar();
         acaoBotaoSalvar();
         caixaS();
-        caixaBotao();
+        configurarJScrollpane();
         jFrame.setVisible(true);
     }
             
@@ -45,6 +52,7 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setResizable(false);
+        jFrame.getContentPane().setBackground(Color.decode("#4286f4"));
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
     }
@@ -66,6 +74,13 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
         jFrame.add(labelPreco);
         jFrame.add(campoPreco);
         jFrame.add(caixaDeSelecao);
+        jFrame.add(labelRaca);
+        jFrame.add(jRadioButtonCome);
+        jFrame.add(jRadioButtonMorto);
+        jFrame.add(jRadioButtonRacao);
+        jFrame.add(jRadioButtonVivo);
+        jFrame.add(jLabelDescricao);
+        jFrame.add(jScrollPane);
     }
 
     @Override
@@ -86,56 +101,52 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
         campoPreco = new JTextField();
         caixaDeSelecao = new JComboBox();
         botao = new JButton("Obter");
+        labelRaca = new JLabel("Raça");
+        jRadioButtonCome = new JRadioButton("Come almoços, jantas");
+        jRadioButtonMorto = new JRadioButton("Morto");
+        jRadioButtonVivo = new JRadioButton("Vivo");
+        jRadioButtonRacao = new JRadioButton("Ração");
+        jScrollPane = new JScrollPane();
+        jTextArea = new JTextArea();
+        jLabelDescricao = new JLabel("Descrição");
+        jScrollPane.setViewportView(jTextArea);
     }
 
     @Override
     public void gerarLocalizacoes() {
-        jButtonCancelar.setLocation(315, 340);
-        jButtonSalvar.setLocation(455, 340);
-        jCheckBoxAdestrado.setLocation(335, 160);
-        jCheckBoxCastrado.setLocation(455, 160);
-        jCheckBoxVacinado.setLocation(335, 185);
-        jCheckBoxPedigree.setLocation(455, 185);
-        labelNome.setLocation(10,40);
-        campoNome.setLocation(10, 55);
-        labelIdade.setLocation(395, 40);
-        campoIdade.setLocation(395,55);
-        labelApelido.setLocation(185,95);
-        campoApelido.setLocation(185,115);
-        labelPreco.setLocation(395, 95);
-        campoPreco.setLocation(395, 115);
-        caixaDeSelecao.setLocation(85, 10);
-        botao.setLocation(45, 35);
+        jButtonCancelar.setLocation(315, 320);
+        jButtonSalvar.setLocation(455, 320);
+        jCheckBoxAdestrado.setLocation(335, 140);
+        jCheckBoxCastrado.setLocation(455, 140);
+        jCheckBoxVacinado.setLocation(335, 160);
+        jCheckBoxPedigree.setLocation(455, 160);
+        labelNome.setLocation(10,10);
+        campoNome.setLocation(10, 30);
+        labelIdade.setLocation(395, 10);
+        campoIdade.setLocation(395,30);
+        labelApelido.setLocation(185,60);
+        campoApelido.setLocation(185,95);
+        labelPreco.setLocation(395, 60);
+        campoPreco.setLocation(395, 95);
+        labelRaca.setLocation(10, 60);
+        caixaDeSelecao.setLocation(10, 95);
+        botao.setLocation(45, 95);
+        jRadioButtonCome.setLocation(120, 160);
+        jRadioButtonRacao.setLocation(120, 140);
+        jRadioButtonMorto.setLocation(10, 160);
+        jRadioButtonVivo.setLocation(10, 140);
+        jLabelDescricao.setLocation(10, 210);
+        jScrollPane.setLocation(10, 235);
         
-    }
-    public void caixaS(){
-            DefaultComboBoxModel modelo = new DefaultComboBoxModel(new Object[]{
-			"Labrador", "Pincher", "Husk"
-		});
-            caixaDeSelecao.setModel(modelo);
-            caixaDeSelecao.setSelectedIndex(-1);
-            botao.addActionListener ( new ActionListener(){
-        public void actionPerformed(ActionEvent e) {
-			
-        
-        if (caixaDeSelecao.getSelectedItem() == -1) {
-            JOptionPane.showMessageDialog(null, "Selecione algum jogo bom");
-            return;
-        }
-
-        String jogoSelecionado = caixaDeSelecao.getSelectedItem().toString();
-        JOptionPane.showMessageDialog(null, "Jogo Selecionado: " + jogoSelecionado);
-    }
-});
     }
     @Override
     public void gerarDimensoes() {
         jButtonCancelar.setSize(130, 60);
         jButtonSalvar.setSize(130, 60);
-        jCheckBoxAdestrado.setSize(120, 25);
-        jCheckBoxCastrado.setSize(120, 25);
-        jCheckBoxVacinado.setSize(120, 25);
-        jCheckBoxPedigree.setSize(120, 25);
+        jCheckBoxAdestrado.setSize(120, 20);
+        jCheckBoxCastrado.setSize(120, 20);
+        jCheckBoxVacinado.setSize(120, 45);
+        jCheckBoxPedigree.setSize(120, 45);
         labelNome.setSize(340,15);
         campoNome.setSize(340, 25);
         labelIdade.setSize(190, 15);
@@ -144,8 +155,40 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
         campoApelido.setSize(165,25);
         labelPreco.setSize(190, 25);
         campoPreco.setSize(190, 25);
-        caixaDeSelecao.setSize(200,20);
-        botao.setSize(150,20);
+        caixaDeSelecao.setSize(160,25);
+        labelRaca.setSize(40, 30);
+        jRadioButtonCome.setSize(160, 45);
+        jRadioButtonRacao.setSize(100, 20);
+        jRadioButtonMorto.setSize(100, 45);
+        jRadioButtonVivo.setSize(100, 20);
+        jLabelDescricao.setSize(70, 20);
+        jScrollPane.setSize(580, 80);
+    }
+    public void configurarJScrollpane(){
+        jScrollPane.setViewportView(jTextArea);
+        jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        jTextArea.setLineWrap(true);
+        }
+    public void caixaS(){
+            DefaultComboBoxModel modelo = new DefaultComboBoxModel(new Object[]{
+			"Labrador Escavador", "Pincher Cão do Inferno", "Husk Fake Fox"
+		});
+            caixaDeSelecao.setModel(modelo);
+            caixaDeSelecao.setSelectedIndex(-1);
+            botao.addActionListener ( new ActionListener(){
+        public void actionPerformed(ActionEvent e) {
+			
+        
+        if (caixaDeSelecao.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione algum jogo bom");
+            return;
+        }
+
+        String jogoSelecionado = caixaDeSelecao.getSelectedItem().toString();
+        JOptionPane.showMessageDialog(null, "Jogo Selecionado: " + jogoSelecionado);
+    }
+});
     }
 
     @Override
@@ -157,6 +200,15 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
                 jCheckBoxCastrado.setSelected(false);
                 jCheckBoxVacinado.setSelected(false);
                 jCheckBoxPedigree.setSelected(false);
+                jRadioButtonCome.setSelected(false);
+                jRadioButtonMorto.setSelected(false);
+                jRadioButtonRacao.setSelected(false);
+                jRadioButtonVivo.setSelected(false);
+                caixaDeSelecao.setSelectedIndex(-1);
+                campoApelido.setText("");
+                campoNome.setText("");
+                campoIdade.setText("");
+                campoPreco.setText("");
             }
         });
     }
@@ -166,6 +218,14 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
         jButtonSalvar.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
+                String nome = campoNome.getText().trim();
+                String apelido = campoApelido.getText().trim();
+                
+                if(nome.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Campo nome em branco");
+                    return;
+                }
+                
                 if(!jCheckBoxAdestrado.isSelected()){
                     return;
                 }
@@ -176,6 +236,18 @@ public class Exercicio00JButtonTela implements Exercicio00Interface {
                     return;
                 }
                 if(!jCheckBoxPedigree.isSelected()){
+                    return;
+                }
+                if(!jRadioButtonCome.isSelected()){
+                    return;
+                }
+                if(!jRadioButtonMorto.isSelected()){
+                    return;
+                }
+                if(!jRadioButtonRacao.isSelected()){
+                    return;
+                }
+                if(!jRadioButtonVivo.isSelected()){
                     return;
                 }
             }

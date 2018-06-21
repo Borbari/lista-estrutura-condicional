@@ -24,9 +24,9 @@ public class ExemploSistema01{
 		JButton botaoCadastrar = new JButton("Cadastrar");
 		JButton botaoEditar = new JButton("EDitar");
 		JButton botaoApagar = new JButton("Apagar");
-
 		JTextField campoNome = new JTextField();
 		JComboBox caixaSelecaoItens = new JComboBox();
+
 
 		labelNome.setSize(50, 20);
 		labelItens.setSize(50, 20);
@@ -55,8 +55,8 @@ public class ExemploSistema01{
 		botaoCadastrar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				cadastrar();
-				
-					});
+                                }
+                        });
 
 		botaoEditar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
@@ -87,11 +87,11 @@ public class ExemploSistema01{
 				campoNome.setText("");
 				JOptionPane.showMessageDialog(null, nome + " cadastrado com sucesso!");
 
-			}
+    }
 
-
-			}
-			private static void editar(){
-		}
 
 }
+			
+		
+
+

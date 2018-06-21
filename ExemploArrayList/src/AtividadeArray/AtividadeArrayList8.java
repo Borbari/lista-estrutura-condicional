@@ -1,6 +1,8 @@
-import java.util.ArrayList;
+
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+
+
 
 
 /**
@@ -56,7 +58,7 @@ public class AtividadeArrayList8 {
         
         JOptionPane.showMessageDialog(null, 
             "Salários:\n"
-            + texto 
+            
             + "\nMédia: " + media
             + "\nSoma: " + soma
             + "\nSoma Pares: " + somaPares
